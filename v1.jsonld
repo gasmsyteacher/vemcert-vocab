@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "@version": 1.1,
+
+    "cachet": "https://w3id.org/cachet/v1#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "_comment": "Terms minted in the Cachet namespace. Person-level properties (holderName, dateOfBirth, placeOfBirth) are NOT here: they map to schema.org in the per-schema ld_context, which is correct and stays that way.",
+
+    "awardDate": "cachet:awardDate",
+    "certificateNumber": "cachet:certificateNumber",
+    "certificationTitle": "cachet:certificationTitle",
+    "expiryDate": "cachet:expiryDate",
+    "level": "cachet:level",
+    "mention": "cachet:mention",
+    "programme": "cachet:programme",
+    "session": "cachet:session",
+    "specialization": "cachet:specialization",
+    "studentNumber": "cachet:studentNumber",
+
+    "AttendanceEvidence": "cachet:AttendanceEvidence",
+    "basis": "cachet:basis",
+    "sourceRef": "cachet:sourceRef",
+    "computedBy": { "@id": "cachet:computedBy", "@type": "@id" },
+    "hoursAttended": { "@id": "cachet:hoursAttended", "@type": "xsd:decimal" },
+    "recordedAt": { "@id": "cachet:recordedAt", "@type": "xsd:dateTime" }
+  }
+}

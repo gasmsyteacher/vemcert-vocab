@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cachet Vocabulary v1</title>
+<style>
+  :root {
+    --bg: #fdfcfa; --surface: #fff; --fg: #1c1917; --muted: #57534e; --subtle: #78716c;
+    --border: #e7e5e4; --accent: #6b1f2a; --code-bg: #f5f4f2;
+    --warn-bg: #fdf6e7; --warn-border: #e0c88a; --warn-fg: #5c4708;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1a1817; --surface: #232120; --fg: #f5f4f2; --muted: #a8a29e; --subtle: #8a8481;
+      --border: #3a3735; --accent: #d4a373; --code-bg: #2a2725;
+      --warn-bg: #2b2412; --warn-border: #6b5620; --warn-fg: #e8d5a3;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2rem 1.25rem 5rem; background: var(--bg); color: var(--fg);
+    font: 16px/1.65 ui-serif, Georgia, "Times New Roman", serif;
+  }
+  main { max-width: 56rem; margin: 0 auto; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .35rem; letter-spacing: -.02em; }
+  h2 { font-size: 1.3rem; margin: 3rem 0 .75rem; letter-spacing: -.01em;
+       padding-bottom: .4rem; border-bottom: 1px solid var(--border); }
+  h3 { font-size: 1.05rem; margin: 2rem 0 .5rem; }
+  p, li { color: var(--muted); }
+  a { color: var(--accent); }
+  .lede { font-size: 1.05rem; color: var(--muted); margin: 0 0 1.5rem; }
+  code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .875em; }
+  code { background: var(--code-bg); padding: .12em .35em; border-radius: 3px; color: var(--fg); }
+  .ns { display: inline-block; background: var(--code-bg); border: 1px solid var(--border);
+        border-radius: 6px; padding: .5rem .75rem; margin: .25rem 0 1.5rem; }
+  .scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; font-size: .9375rem; }
+  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-weight: 600; color: var(--fg); white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  td:first-child { white-space: nowrap; }
+  td.desc { color: var(--muted); min-width: 22rem; }
+  .type { color: var(--subtle); font-size: .8125rem; white-space: nowrap; }
+  .note { background: var(--warn-bg); border: 1px solid var(--warn-border); color: var(--warn-fg);
+          border-radius: 8px; padding: .9rem 1.1rem; margin: 1.25rem 0; }
+  .note strong { color: var(--warn-fg); }
+  .note p { color: inherit; margin: .4rem 0 0; }
+  .note p:first-child { margin-top: 0; }
+  footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--border);
+           color: var(--subtle); font-size: .875rem; }
+</style>
+</head>
+<body>
+<main>
+
+  <h1>Cachet Vocabulary</h1>
+  <p class="lede">Version 1 &middot; terms used in the <code>credentialSubject</code> and
+  <code>evidence</code> of W3C Verifiable Credentials issued by Cachet.</p>
+
+  <div class="ns mono">https://w3id.org/cachet/v1#</div>
+
+  <h2>Stability</h2>
+  <p>This version is <strong>immutable</strong>. Terms may be added. A term&rsquo;s meaning is
+  never changed, and a term is never removed &mdash; term IRIs are cryptographically signed
+  into credentials intended to verify indefinitely, offline, after the issuing institution or
+  the Cachet platform no longer exists. Breaking changes mint a new version path
+  (<code>/v2</code>).</p>
+
+  <h2>Scope</h2>
+  <p>Only domain-specific terms are minted here. Person-level properties are expressed with
+  established vocabularies in each schema&rsquo;s own context and are deliberately absent from
+  this namespace:</p>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Field</th><th>IRI</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">holderName</td><td class="mono">schema:name</td></tr>
+        <tr><td class="mono">dateOfBirth</td><td class="mono">schema:birthDate</td></tr>
+        <tr><td class="mono">placeOfBirth</td><td class="mono">schema:birthPlace</td></tr>
+        <tr><td class="mono">thesisTitle</td><td class="mono">dc:title</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Properties &mdash; academic and professional awards</h2>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Term</th><th>Range</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">programme</td><td class="type">untyped</td>
+            <td class="desc">Programme or field of study the award relates to.</td></tr>
+        <tr><td class="mono">specialization</td><td class="type">untyped</td>
+            <td class="desc">Specialization within a programme.</td></tr>
+        <tr><td class="mono">mention</td><td class="type">untyped</td>
+            <td class="desc">Grade or distinction awarded, e.g. <code>Tr&egrave;s Bien</code>.</td></tr>
+        <tr><td class="mono">session</td><td class="type">untyped</td>
+            <td class="desc">Academic session or year the award relates to. Values are
+            issuer-supplied strings such as <code>2026</code>, not dates.</td></tr>
+        <tr><td class="mono">certificateNumber</td><td class="type">untyped</td>
+            <td class="desc">The issuer&rsquo;s own reference number, as printed on the certificate.</td></tr>
+        <tr><td class="mono">studentNumber</td><td class="type">untyped</td>
+            <td class="desc">Institution-scoped student registration number (<em>matricule</em>).
+            Scoped to the issuer; not globally unique.</td></tr>
+        <tr><td class="mono">certificationTitle</td><td class="type">untyped</td>
+            <td class="desc">Name of a professional certification.</td></tr>
+        <tr><td class="mono">level</td><td class="type">untyped</td>
+            <td class="desc">Level or tier of a professional certification.</td></tr>
+        <tr><td class="mono">awardDate</td><td class="type">untyped</td>
+            <td class="desc">Date a professional certification was awarded.</td></tr>
+        <tr><td class="mono">expiryDate</td><td class="type">untyped</td>
+            <td class="desc">Date a professional certification lapses.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p><strong>Why are the date terms untyped?</strong></p>
+    <p>Only terms whose values Cachet itself generates carry an <code>@type</code>. The values of
+    <code>awardDate</code>, <code>expiryDate</code> and <code>session</code> come from tenant data
+    and take whatever lexical form a registrar entered. Declaring <code>xsd:date</code> on a field
+    we do not control would assert a format the data does not honour &mdash; inside a document we
+    have signed.</p>
+  </div>
+
+  <h2>Classes &mdash; evidence</h2>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Term</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">AttendanceEvidence</td>
+            <td class="desc">Evidence that a credential&rsquo;s claim was derived from an attendance
+            record whose eligibility was computed by an upstream system.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Properties &mdash; evidence</h2>
+  <div class="scroll">
+    <table>
+      <thead><tr><th>Term</th><th>Range</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">basis</td><td class="type">untyped</td>
+            <td class="desc">The rule under which eligibility was computed:
+            <code>cpd</code>, <code>hours</code>, or <code>attendance</code>.</td></tr>
+        <tr><td class="mono">computedBy</td><td class="type">@id</td>
+            <td class="desc">Identifier of the system that computed eligibility. An HTTPS origin,
+            <strong>not a DID</strong> &mdash; see the note below.</td></tr>
+        <tr><td class="mono">sourceRef</td><td class="type">untyped</td>
+            <td class="desc">Opaque reference to the upstream record, of the form
+            <code>&lt;activity&gt;:&lt;participant&gt;</code>. Used for idempotency on re-import.</td></tr>
+        <tr><td class="mono">hoursAttended</td><td class="type">xsd:decimal</td>
+            <td class="desc">Hours of attendance the eligibility computation was based on.
+            Absent when the upstream record does not carry it &mdash; never <code>null</code>.</td></tr>
+        <tr><td class="mono">recordedAt</td><td class="type">xsd:dateTime</td>
+            <td class="desc">When the evidence was retrieved from the upstream system.
+            Not when the underlying activity took place.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p><strong>What <code>evidence</code> does and does not prove.</strong></p>
+    <p>The <code>evidence</code> object is signed by the <em>issuer&rsquo;s</em> key. It therefore
+    proves that <em>the issuer asserts</em> this basis for the claim. It does not prove that the
+    system named in <code>computedBy</code> independently attested to anything.</p>
+    <p>That is why <code>computedBy</code> is an HTTPS origin rather than a DID: a DID would imply
+    a resolvable, key-backed identity capable of making its own verifiable statements. An
+    independently-verifiable upstream attestation requires that system to sign its own payload and
+    for that signed object to be embedded here &mdash; a future extension.</p>
+  </div>
+
+  <h2>Machine-readable context</h2>
+  <p>The JSON-LD context is served from this same IRI under content negotiation
+  (<code>Accept: application/ld+json</code>), and is also available at
+  <a href="v1.jsonld"><code>v1.jsonld</code></a>.</p>
+  <p>Credentials issued by Cachet embed these term definitions <em>inline</em> in their
+  <code>@context</code>. Nothing dereferences this document at issuance or verification time,
+  which is what allows a Cachet credential to be verified offline from a printed QR code with no
+  network access. This page is a canonical definition for humans and for tools that follow the
+  IRI &mdash; documentation with a URL, not a runtime dependency.</p>
+  <p>In this document the namespace is bound to the prefix <code>cachet:</code>; in issued
+  credentials it is bound to <code>certificate:</code>. Prefix names are local to a document and
+  both expand to the same IRI. The IRI is what is signed.</p>
+
+  <footer>
+    Maintained by <a href="https://github.com/gasmsyteacher">gasmsyteacher</a>
+    &middot; <a href="mailto:mail@virtualmindshub.com">mail@virtualmindshub.com</a><br>
+    Permanent identifier registered at
+    <a href="https://github.com/perma-id/w3id.org/tree/master/cachet">perma-id/w3id.org</a>.
+  </footer>
+
+</main>
+</body>
+</html>

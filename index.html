@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cachet Vocabulary</title>
+<style>
+  :root { --bg:#fdfcfa; --fg:#1c1917; --muted:#57534e; --border:#e7e5e4; --accent:#6b1f2a; --code-bg:#f5f4f2; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#1a1817; --fg:#f5f4f2; --muted:#a8a29e; --border:#3a3735; --accent:#d4a373; --code-bg:#2a2725; }
+  }
+  body { margin:0; padding:4rem 1.25rem; background:var(--bg); color:var(--fg);
+         font:16px/1.65 ui-serif, Georgia, "Times New Roman", serif; }
+  main { max-width:42rem; margin:0 auto; }
+  h1 { font-size:2rem; margin:0 0 .5rem; letter-spacing:-.02em; }
+  p { color:var(--muted); }
+  a { color:var(--accent); }
+  code { font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.875em;
+         background:var(--code-bg); padding:.12em .35em; border-radius:3px; color:var(--fg); }
+  ul { padding-left:1.1rem; }
+  li { color:var(--muted); margin:.4rem 0; }
+  footer { margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border);
+           color:var(--muted); font-size:.875rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cachet Vocabulary</h1>
+  <p>Terms used in the <code>credentialSubject</code> and <code>evidence</code> of W3C Verifiable
+  Credentials issued by <a href="https://github.com/gasmsyteacher">Cachet</a>.</p>
+
+  <h2>Versions</h2>
+  <ul>
+    <li><a href="v1.html">Version 1</a> &mdash; <code>https://w3id.org/cachet/v1#</code>
+        (<a href="v1.jsonld">JSON-LD context</a>)</li>
+  </ul>
+
+  <p>Published versions are immutable: terms may be added, never redefined or removed. Term IRIs
+  are cryptographically signed into credentials that are intended to remain verifiable
+  indefinitely &mdash; including offline, after the issuing institution or this platform no longer
+  exists.</p>
+
+  <footer>
+    Maintained by <a href="https://github.com/gasmsyteacher">gasmsyteacher</a>
+    &middot; <a href="mailto:mail@virtualmindshub.com">mail@virtualmindshub.com</a>
+  </footer>
+</main>
+</body>
+</html>

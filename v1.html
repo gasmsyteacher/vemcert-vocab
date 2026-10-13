@@ -3,193 +3,164 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cachet Vocabulary v1</title>
+<title>Vemcert Vocabulary v1</title>
+<link rel="alternate" type="application/ld+json" href="v1.jsonld">
 <style>
-  :root {
-    --bg: #fdfcfa; --surface: #fff; --fg: #1c1917; --muted: #57534e; --subtle: #78716c;
-    --border: #e7e5e4; --accent: #6b1f2a; --code-bg: #f5f4f2;
-    --warn-bg: #fdf6e7; --warn-border: #e0c88a; --warn-fg: #5c4708;
-  }
+  :root { --bg:#fdfcfa; --surface:#fff; --fg:#1c1917; --muted:#57534e; --subtle:#78716c;
+          --border:#e7e5e4; --accent:#6b1f2a; --code-bg:#f5f4f2; }
   @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #1a1817; --surface: #232120; --fg: #f5f4f2; --muted: #a8a29e; --subtle: #8a8481;
-      --border: #3a3735; --accent: #d4a373; --code-bg: #2a2725;
-      --warn-bg: #2b2412; --warn-border: #6b5620; --warn-fg: #e8d5a3;
-    }
+    :root { --bg:#1a1817; --surface:#232120; --fg:#f5f4f2; --muted:#a8a29e; --subtle:#8a8481;
+            --border:#3a3735; --accent:#d4a373; --code-bg:#2a2725; }
   }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; padding: 2rem 1.25rem 5rem; background: var(--bg); color: var(--fg);
-    font: 16px/1.65 ui-serif, Georgia, "Times New Roman", serif;
-  }
-  main { max-width: 56rem; margin: 0 auto; }
-  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .35rem; letter-spacing: -.02em; }
-  h2 { font-size: 1.3rem; margin: 3rem 0 .75rem; letter-spacing: -.01em;
-       padding-bottom: .4rem; border-bottom: 1px solid var(--border); }
-  h3 { font-size: 1.05rem; margin: 2rem 0 .5rem; }
-  p, li { color: var(--muted); }
-  a { color: var(--accent); }
-  .lede { font-size: 1.05rem; color: var(--muted); margin: 0 0 1.5rem; }
-  code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .875em; }
-  code { background: var(--code-bg); padding: .12em .35em; border-radius: 3px; color: var(--fg); }
-  .ns { display: inline-block; background: var(--code-bg); border: 1px solid var(--border);
-        border-radius: 6px; padding: .5rem .75rem; margin: .25rem 0 1.5rem; }
-  .scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
-  table { width: 100%; border-collapse: collapse; font-size: .9375rem; }
-  th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
-  th { font-weight: 600; color: var(--fg); white-space: nowrap; }
-  tr:last-child td { border-bottom: 0; }
-  td:first-child { white-space: nowrap; }
-  td.desc { color: var(--muted); min-width: 22rem; }
-  .type { color: var(--subtle); font-size: .8125rem; white-space: nowrap; }
-  .note { background: var(--warn-bg); border: 1px solid var(--warn-border); color: var(--warn-fg);
-          border-radius: 8px; padding: .9rem 1.1rem; margin: 1.25rem 0; }
-  .note strong { color: var(--warn-fg); }
-  .note p { color: inherit; margin: .4rem 0 0; }
-  .note p:first-child { margin-top: 0; }
-  footer { margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--border);
-           color: var(--subtle); font-size: .875rem; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:2rem 1rem 5rem; background:var(--bg); color:var(--fg);
+         font:16px/1.65 ui-serif, Georgia, "Times New Roman", serif; }
+  main { max-width:56rem; margin:0 auto; }
+  h1 { font-size:2rem; line-height:1.2; margin:0 0 .35rem; letter-spacing:-.02em; }
+  h2 { font-size:1.3rem; margin:3rem 0 .75rem; padding-bottom:.4rem; border-bottom:1px solid var(--border); }
+  p, li { color:var(--muted); }
+  a { color:var(--accent); }
+  code, .mono { font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.875em; }
+  code { background:var(--code-bg); padding:.12em .35em; border-radius:3px; color:var(--fg); }
+  .ns { display:inline-block; max-width:100%; overflow-wrap:anywhere; background:var(--code-bg);
+        border:1px solid var(--border); border-radius:6px; padding:.5rem .75rem; margin:.25rem 0 1.5rem; }
+  .scroll { overflow-x:auto; border:1px solid var(--border); border-radius:8px; background:var(--surface); }
+  table { width:100%; border-collapse:collapse; font-size:.9375rem; }
+  th, td { text-align:left; padding:.7rem .9rem; border-bottom:1px solid var(--border); vertical-align:top; }
+  th { font-weight:600; white-space:nowrap; }
+  tr:last-child td { border-bottom:0; }
+  td:first-child { white-space:nowrap; }
+  td.desc { color:var(--muted); min-width:18rem; }
+  .type { color:var(--subtle); font-size:.8125rem; white-space:nowrap; }
+  footer { margin-top:4rem; padding-top:1.25rem; border-top:1px solid var(--border); color:var(--subtle); font-size:.875rem; }
 </style>
 </head>
 <body>
 <main>
-
-  <h1>Cachet Vocabulary</h1>
-  <p class="lede">Version 1 &middot; terms used in the <code>credentialSubject</code> and
-  <code>evidence</code> of W3C Verifiable Credentials issued by Cachet.</p>
-
-  <div class="ns mono">https://w3id.org/cachet/v1#</div>
+  <h1>Vemcert Vocabulary</h1>
+  <p>Version 1 &middot; 48 terms used in the <code>credentialSubject</code> and <code>evidence</code>
+  of W3C Verifiable Credentials issued with Vemcert.</p>
+  <div class="ns mono">https://w3id.org/vemcert/v1#</div>
 
   <h2>Stability</h2>
-  <p>This version is <strong>immutable</strong>. Terms may be added. A term&rsquo;s meaning is
-  never changed, and a term is never removed &mdash; term IRIs are cryptographically signed
-  into credentials intended to verify indefinitely, offline, after the issuing institution or
-  the Cachet platform no longer exists. Breaking changes mint a new version path
-  (<code>/v2</code>).</p>
+  <p>This version is <strong>immutable</strong>. Terms may be added. A term&rsquo;s meaning is never
+  changed and a term is never removed: term IRIs are signed into credentials meant to verify
+  indefinitely, offline, after the issuing organization or the platform no longer exists. Breaking
+  changes mint a new version path (<code>/v2</code>).</p>
 
   <h2>Scope</h2>
-  <p>Only domain-specific terms are minted here. Person-level properties are expressed with
-  established vocabularies in each schema&rsquo;s own context and are deliberately absent from
-  this namespace:</p>
-  <div class="scroll">
-    <table>
-      <thead><tr><th>Field</th><th>IRI</th></tr></thead>
-      <tbody>
-        <tr><td class="mono">holderName</td><td class="mono">schema:name</td></tr>
-        <tr><td class="mono">dateOfBirth</td><td class="mono">schema:birthDate</td></tr>
-        <tr><td class="mono">placeOfBirth</td><td class="mono">schema:birthPlace</td></tr>
-        <tr><td class="mono">thesisTitle</td><td class="mono">dc:title</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <p>Only domain-specific terms are minted here. Person-level properties use established
+  vocabularies in each credential type&rsquo;s own context: <code>holderName</code> is
+  <code>schema:name</code>, <code>dateOfBirth</code> <code>schema:birthDate</code>,
+  <code>placeOfBirth</code> <code>schema:birthPlace</code>, <code>thesisTitle</code>
+  <code>dc:title</code>. A term carries an <code>@type</code> only where Vemcert itself checks the
+  value&rsquo;s form; values written by a registrar (<code>awardDate</code>, <code>session</code>)
+  stay untyped rather than assert a format the data does not honour.</p>
 
-  <h2>Properties &mdash; academic and professional awards</h2>
-  <div class="scroll">
-    <table>
+  <h2>Academic and professional awards</h2>
+  <div class="scroll"><table>
       <thead><tr><th>Term</th><th>Range</th><th>Description</th></tr></thead>
       <tbody>
-        <tr><td class="mono">programme</td><td class="type">untyped</td>
-            <td class="desc">Programme or field of study the award relates to.</td></tr>
-        <tr><td class="mono">specialization</td><td class="type">untyped</td>
-            <td class="desc">Specialization within a programme.</td></tr>
-        <tr><td class="mono">mention</td><td class="type">untyped</td>
-            <td class="desc">Grade or distinction awarded, e.g. <code>Tr&egrave;s Bien</code>.</td></tr>
-        <tr><td class="mono">session</td><td class="type">untyped</td>
-            <td class="desc">Academic session or year the award relates to. Values are
-            issuer-supplied strings such as <code>2026</code>, not dates.</td></tr>
-        <tr><td class="mono">certificateNumber</td><td class="type">untyped</td>
-            <td class="desc">The issuer&rsquo;s own reference number, as printed on the certificate.</td></tr>
-        <tr><td class="mono">studentNumber</td><td class="type">untyped</td>
-            <td class="desc">Institution-scoped student registration number (<em>matricule</em>).
-            Scoped to the issuer; not globally unique.</td></tr>
-        <tr><td class="mono">certificationTitle</td><td class="type">untyped</td>
-            <td class="desc">Name of a professional certification.</td></tr>
-        <tr><td class="mono">level</td><td class="type">untyped</td>
-            <td class="desc">Level or tier of a professional certification.</td></tr>
-        <tr><td class="mono">awardDate</td><td class="type">untyped</td>
-            <td class="desc">Date a professional certification was awarded.</td></tr>
-        <tr><td class="mono">expiryDate</td><td class="type">untyped</td>
-            <td class="desc">Date a professional certification lapses.</td></tr>
+        <tr id="programme"><td class="mono"><a href="#programme">programme</a></td><td class="type">untyped</td><td class="desc">Programme or field of study the award relates to.</td></tr>
+        <tr id="specialization"><td class="mono"><a href="#specialization">specialization</a></td><td class="type">untyped</td><td class="desc">Specialization within a programme.</td></tr>
+        <tr id="mention"><td class="mono"><a href="#mention">mention</a></td><td class="type">untyped</td><td class="desc">Grade or distinction awarded, e.g. <code>Très Bien</code>.</td></tr>
+        <tr id="session"><td class="mono"><a href="#session">session</a></td><td class="type">untyped</td><td class="desc">Academic session the award relates to, as the issuer writes it (<code>JUILLET 2018</code>, <code>2026</code>) — a label, not a date.</td></tr>
+        <tr id="certificateNumber"><td class="mono"><a href="#certificateNumber">certificateNumber</a></td><td class="type">untyped</td><td class="desc">The issuer’s own reference number, as printed on the certificate.</td></tr>
+        <tr id="studentNumber"><td class="mono"><a href="#studentNumber">studentNumber</a></td><td class="type">untyped</td><td class="desc">Institution-scoped student registration number (<em>matricule</em>). Not globally unique.</td></tr>
+        <tr id="registrationNumber"><td class="mono"><a href="#registrationNumber">registrationNumber</a></td><td class="type">untyped</td><td class="desc">Institution-scoped registration number (<em>matricule</em>) of the person a statement is about.</td></tr>
+        <tr id="certificationTitle"><td class="mono"><a href="#certificationTitle">certificationTitle</a></td><td class="type">untyped</td><td class="desc">Name of a professional certification.</td></tr>
+        <tr id="level"><td class="mono"><a href="#level">level</a></td><td class="type">untyped</td><td class="desc">Level or tier of a professional certification.</td></tr>
+        <tr id="awardDate"><td class="mono"><a href="#awardDate">awardDate</a></td><td class="type">untyped</td><td class="desc">Date a professional certification was awarded, as the issuer wrote it.</td></tr>
+        <tr id="expiryDate"><td class="mono"><a href="#expiryDate">expiryDate</a></td><td class="type">untyped</td><td class="desc">Date a professional certification lapses, as the issuer wrote it.</td></tr>
       </tbody>
-    </table>
-  </div>
+  </table></div>
 
-  <div class="note">
-    <p><strong>Why are the date terms untyped?</strong></p>
-    <p>Only terms whose values Cachet itself generates carry an <code>@type</code>. The values of
-    <code>awardDate</code>, <code>expiryDate</code> and <code>session</code> come from tenant data
-    and take whatever lexical form a registrar entered. Declaring <code>xsd:date</code> on a field
-    we do not control would assert a format the data does not honour &mdash; inside a document we
-    have signed.</p>
-  </div>
-
-  <h2>Classes &mdash; evidence</h2>
-  <div class="scroll">
-    <table>
-      <thead><tr><th>Term</th><th>Description</th></tr></thead>
-      <tbody>
-        <tr><td class="mono">AttendanceEvidence</td>
-            <td class="desc">Evidence that a credential&rsquo;s claim was derived from an attendance
-            record whose eligibility was computed by an upstream system.</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h2>Properties &mdash; evidence</h2>
-  <div class="scroll">
-    <table>
+  <h2>Courses</h2>
+  <div class="scroll"><table>
       <thead><tr><th>Term</th><th>Range</th><th>Description</th></tr></thead>
       <tbody>
-        <tr><td class="mono">basis</td><td class="type">untyped</td>
-            <td class="desc">The rule under which eligibility was computed:
-            <code>cpd</code>, <code>hours</code>, or <code>attendance</code>.</td></tr>
-        <tr><td class="mono">computedBy</td><td class="type">@id</td>
-            <td class="desc">Identifier of the system that computed eligibility. An HTTPS origin,
-            <strong>not a DID</strong> &mdash; see the note below.</td></tr>
-        <tr><td class="mono">sourceRef</td><td class="type">untyped</td>
-            <td class="desc">Opaque reference to the upstream record, of the form
-            <code>&lt;activity&gt;:&lt;participant&gt;</code>. Used for idempotency on re-import.</td></tr>
-        <tr><td class="mono">hoursAttended</td><td class="type">xsd:decimal</td>
-            <td class="desc">Hours of attendance the eligibility computation was based on.
-            Absent when the upstream record does not carry it &mdash; never <code>null</code>.</td></tr>
-        <tr><td class="mono">recordedAt</td><td class="type">xsd:dateTime</td>
-            <td class="desc">When the evidence was retrieved from the upstream system.
-            Not when the underlying activity took place.</td></tr>
+        <tr id="courseTitle"><td class="mono"><a href="#courseTitle">courseTitle</a></td><td class="type">untyped</td><td class="desc">Title of a course.</td></tr>
+        <tr id="courseCode"><td class="mono"><a href="#courseCode">courseCode</a></td><td class="type">untyped</td><td class="desc">The institution’s code for a course.</td></tr>
+        <tr id="completionDate"><td class="mono"><a href="#completionDate">completionDate</a></td><td class="type">untyped</td><td class="desc">Date the holder completed a course.</td></tr>
+        <tr id="score"><td class="mono"><a href="#score">score</a></td><td class="type">untyped</td><td class="desc">Final score obtained in a course, in percent.</td></tr>
+        <tr id="tutorName"><td class="mono"><a href="#tutorName">tutorName</a></td><td class="type">untyped</td><td class="desc">Name of the course’s tutor.</td></tr>
+        <tr id="durationHours"><td class="mono"><a href="#durationHours">durationHours</a></td><td class="type">untyped</td><td class="desc">Length of a course, in hours.</td></tr>
+        <tr id="periodName"><td class="mono"><a href="#periodName">periodName</a></td><td class="type">untyped</td><td class="desc">Teaching period a course ran in, e.g. a semester.</td></tr>
+        <tr id="lecturerName"><td class="mono"><a href="#lecturerName">lecturerName</a></td><td class="type">untyped</td><td class="desc">Name of the lecturer responsible for a course.</td></tr>
+        <tr id="topics"><td class="mono"><a href="#topics">topics</a></td><td class="type">xsd:integer</td><td class="desc">Number of topics in a course’s syllabus.</td></tr>
+        <tr id="declaredPercent"><td class="mono"><a href="#declaredPercent">declaredPercent</a></td><td class="type">xsd:integer</td><td class="desc">Share of the syllabus the lecturer declared covered, in percent.</td></tr>
+        <tr id="verifiedPercent"><td class="mono"><a href="#verifiedPercent">verifiedPercent</a></td><td class="type">xsd:integer</td><td class="desc">Share of the syllabus confirmed covered, in percent.</td></tr>
+        <tr id="closedOn"><td class="mono"><a href="#closedOn">closedOn</a></td><td class="type">xsd:date</td><td class="desc">Date a course’s coverage record was closed.</td></tr>
       </tbody>
-    </table>
-  </div>
+  </table></div>
 
-  <div class="note">
-    <p><strong>What <code>evidence</code> does and does not prove.</strong></p>
-    <p>The <code>evidence</code> object is signed by the <em>issuer&rsquo;s</em> key. It therefore
-    proves that <em>the issuer asserts</em> this basis for the claim. It does not prove that the
-    system named in <code>computedBy</code> independently attested to anything.</p>
-    <p>That is why <code>computedBy</code> is an HTTPS origin rather than a DID: a DID would imply
-    a resolvable, key-backed identity capable of making its own verifiable statements. An
-    independently-verifiable upstream attestation requires that system to sign its own payload and
-    for that signed object to be embedded here &mdash; a future extension.</p>
-  </div>
+  <h2>Participation and attendance</h2>
+  <div class="scroll"><table>
+      <thead><tr><th>Term</th><th>Range</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr id="participationKind"><td class="mono"><a href="#participationKind">participationKind</a></td><td class="type">untyped</td><td class="desc">How participation was measured: <code>attendance</code>, <code>hours</code> or <code>cpd</code>.</td></tr>
+        <tr id="activityName"><td class="mono"><a href="#activityName">activityName</a></td><td class="type">untyped</td><td class="desc">Name of the activity attended.</td></tr>
+        <tr id="unitName"><td class="mono"><a href="#unitName">unitName</a></td><td class="type">untyped</td><td class="desc">Organizational unit (department, faculty) responsible for an activity, course or decision.</td></tr>
+        <tr id="participationDetail"><td class="mono"><a href="#participationDetail">participationDetail</a></td><td class="type">untyped</td><td class="desc">The participation in words, e.g. <code>Attended 18 of 20 sessions (90 %)</code>.</td></tr>
+        <tr id="personRef"><td class="mono"><a href="#personRef">personRef</a></td><td class="type">untyped</td><td class="desc">The issuer’s own reference to the participant (a matricule, an account). Not shown publicly.</td></tr>
+      </tbody>
+  </table></div>
+
+  <h2>Administrative decisions and clearances</h2>
+  <div class="scroll"><table>
+      <thead><tr><th>Term</th><th>Range</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr id="trackingId"><td class="mono"><a href="#trackingId">trackingId</a></td><td class="type">untyped</td><td class="desc">Tracking number of the request a decision answers.</td></tr>
+        <tr id="outcome"><td class="mono"><a href="#outcome">outcome</a></td><td class="type">untyped</td><td class="desc">Machine-readable code of a decision’s outcome.</td></tr>
+        <tr id="outcomeText"><td class="mono"><a href="#outcomeText">outcomeText</a></td><td class="type">untyped</td><td class="desc">A decision’s outcome in words.</td></tr>
+        <tr id="decidedOn"><td class="mono"><a href="#decidedOn">decidedOn</a></td><td class="type">xsd:date</td><td class="desc">Date a decision was taken.</td></tr>
+        <tr id="documentSha256"><td class="mono"><a href="#documentSha256">documentSha256</a></td><td class="type">untyped</td><td class="desc">SHA-256 fingerprint of the document a statement refers to, in hex.</td></tr>
+        <tr id="clearance"><td class="mono"><a href="#clearance">clearance</a></td><td class="type">untyped</td><td class="desc">What a person was cleared for, e.g. <code>End of studies</code>.</td></tr>
+        <tr id="offices"><td class="mono"><a href="#offices">offices</a></td><td class="type">ordered list</td><td class="desc">Offices that gave clearance, in order (an ordered list).</td></tr>
+        <tr id="clearedOn"><td class="mono"><a href="#clearedOn">clearedOn</a></td><td class="type">xsd:date</td><td class="desc">Date the last office gave clearance.</td></tr>
+      </tbody>
+  </table></div>
+
+  <h2>Verification results</h2>
+  <div class="scroll"><table>
+      <thead><tr><th>Term</th><th>Range</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr id="verificationKind"><td class="mono"><a href="#verificationKind">verificationKind</a></td><td class="type">untyped</td><td class="desc">What was verified: <code>degree</code>, <code>transcript</code> or <code>enrolment</code>.</td></tr>
+        <tr id="verifiedClaim"><td class="mono"><a href="#verifiedClaim">verifiedClaim</a></td><td class="type">untyped</td><td class="desc">The claim an inquirer asked the institution to confirm, as confirmed.</td></tr>
+        <tr id="requestedBy"><td class="mono"><a href="#requestedBy">requestedBy</a></td><td class="type">untyped</td><td class="desc">The organization that asked for the verification.</td></tr>
+        <tr id="verifiedOn"><td class="mono"><a href="#verifiedOn">verifiedOn</a></td><td class="type">xsd:date</td><td class="desc">Date the institution confirmed the claim.</td></tr>
+      </tbody>
+  </table></div>
+
+  <h2>Evidence</h2>
+  <div class="scroll"><table>
+      <thead><tr><th>Term</th><th>Range</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr id="AttendanceEvidence"><td class="mono"><a href="#AttendanceEvidence">AttendanceEvidence</a></td><td class="type">untyped</td><td class="desc"><em>Class.</em> Evidence that a claim was derived from an attendance record whose eligibility was computed by an upstream system.</td></tr>
+        <tr id="LegacyMigration"><td class="mono"><a href="#LegacyMigration">LegacyMigration</a></td><td class="type">untyped</td><td class="desc"><em>Class.</em> Evidence that a credential re-issues an award recorded by an earlier system; its <code>validFrom</code> is the original award date.</td></tr>
+        <tr id="basis"><td class="mono"><a href="#basis">basis</a></td><td class="type">untyped</td><td class="desc">The rule or source a claim rests on: for attendance <code>cpd</code>, <code>hours</code> or <code>attendance</code>; for a migration, the kind of earlier system.</td></tr>
+        <tr id="computedBy"><td class="mono"><a href="#computedBy">computedBy</a></td><td class="type">@id</td><td class="desc">Identifier of the system that computed eligibility. An HTTPS origin, <strong>not a DID</strong>: it asserts nothing on its own.</td></tr>
+        <tr id="sourceRef"><td class="mono"><a href="#sourceRef">sourceRef</a></td><td class="type">untyped</td><td class="desc">Opaque reference to the upstream record (for a migration, the printed QR it replaces). Used for idempotency.</td></tr>
+        <tr id="hoursAttended"><td class="mono"><a href="#hoursAttended">hoursAttended</a></td><td class="type">xsd:decimal</td><td class="desc">Hours of attendance the computation was based on. Absent when unknown, never <code>null</code>.</td></tr>
+        <tr id="recordedAt"><td class="mono"><a href="#recordedAt">recordedAt</a></td><td class="type">xsd:dateTime</td><td class="desc">When the evidence was taken from the upstream system — not when the activity took place.</td></tr>
+        <tr id="formulaVersion"><td class="mono"><a href="#formulaVersion">formulaVersion</a></td><td class="type">xsd:integer</td><td class="desc">Version of the formula the upstream system used to compute eligibility.</td></tr>
+      </tbody>
+  </table></div>
 
   <h2>Machine-readable context</h2>
-  <p>The JSON-LD context is served from this same IRI under content negotiation
-  (<code>Accept: application/ld+json</code>), and is also available at
-  <a href="v1.jsonld"><code>v1.jsonld</code></a>.</p>
-  <p>Credentials issued by Cachet embed these term definitions <em>inline</em> in their
-  <code>@context</code>. Nothing dereferences this document at issuance or verification time,
-  which is what allows a Cachet credential to be verified offline from a printed QR code with no
-  network access. This page is a canonical definition for humans and for tools that follow the
-  IRI &mdash; documentation with a URL, not a runtime dependency.</p>
-  <p>In this document the namespace is bound to the prefix <code>cachet:</code>; in issued
-  credentials it is bound to <code>certificate:</code>. Prefix names are local to a document and
-  both expand to the same IRI. The IRI is what is signed.</p>
+  <p>The JSON-LD context is served from the same IRI under content negotiation
+  (<code>Accept: application/ld+json</code>) and at <a href="v1.jsonld"><code>v1.jsonld</code></a>.
+  Credentials embed these definitions inline in their <code>@context</code>; nothing dereferences
+  this document when a credential is issued or verified, which is what lets a credential verify
+  offline from a printed QR code. In this document the namespace is bound to the prefix
+  <code>vemcert:</code>; in issued credentials to <code>certificate:</code>. Both expand to the same
+  IRI, and the IRI is what is signed.</p>
 
   <footer>
-    Maintained by <a href="https://github.com/gasmsyteacher">gasmsyteacher</a>
-    &middot; <a href="mailto:mail@virtualmindshub.com">mail@virtualmindshub.com</a><br>
+    Maintained by <a href="https://github.com/gasmsyteacher">gasmsyteacher</a> (GitHub).<br>
     Permanent identifier registered at
-    <a href="https://github.com/perma-id/w3id.org/tree/master/cachet">perma-id/w3id.org</a>.
+    <a href="https://github.com/perma-id/w3id.org/tree/master/vemcert">perma-id/w3id.org</a>.
   </footer>
-
 </main>
 </body>
 </html>
